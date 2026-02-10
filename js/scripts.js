@@ -1893,9 +1893,8 @@ Function Load Via Ajax
 		ContactForm();
 		PlayVideo();
 		ContactMap();
-	
-		
-	
+		InitClouder();
+
 	}//End Load Via Ajax
 	
 	
@@ -2264,4 +2263,49 @@ Function Clouder
 	function asPixels(number) {
 		return number + 'px';
 	} // asPixels
+
+	function InitClouder() {
+		var clouderEl = document.getElementById('clouder');
+		if (!clouderEl) return;
+
+		var w = Math.max(window.innerWidth, document.body.clientWidth);
+		var h = Math.max(window.innerHeight, document.body.clientHeight);
+
+		clouderEl.style.border = "";
+		clouderEl.style.width = asPixels(w * 2 / 3);
+		clouderEl.style.height = asPixels(h * 2 / 3);
+		clouderEl.style.position = "absolute";
+		clouderEl.style.left = asPixels(w / 6);
+		clouderEl.style.top = asPixels(h / 6);
+		clouderEl.style.border = "1px solid black";
+
+		var tags = [];
+		tags.push({ text: "UX<br/>UI", id: " you could say I am 9/10 in that ", weight: 0.5 });
+		tags.push({ text: "Data<br/>Analysis", id: "you could say I am 6/10 in that", weight: 0.5 });
+		tags.push({ text: "HTML<br/>", id: "you could say I am 8/10 in that", weight: 0.5 });
+		tags.push({ text: "CSS<br/>", id: "you could say I am 8/10 in that", weight: 1 });
+		tags.push({ text: "Java<br/>Script", id: "you could say I am 6/10 in that", weight: 1 });
+		tags.push({ text: "Python<br/>", id: "you could say I am 6/10 in that", weight: 0.5 });
+		tags.push({ text: "C++", id: "you could say I am 7/10 in that", weight: 1 });
+		tags.push({ text: "Web analytics", id: "you could say I am 8/10 in that", weight: 0 });
+		tags.push({ text: "statistics", id: " you could say I am 7/10 in that ", weight: 0 });
+		tags.push({ text: "Qualitative and<br/> quantitative <br/>research", id: "you could say I am  8/10 in that", weight: 0.5 });
+		tags.push({ text: "Product Management", id: "you could say I am 8/10", weight: 0.5 });
+		tags.push({ text: "Product design", id: "you could say I am 7/10 in that", weight: 0 });
+		tags.push({ text: "Machine learning", id: "you could say I am 6/10 in that", weight: 0.5 });
+		tags.push({ text: "Entrepreneurship", id: "you could say I am 9/10 in that", weight: 0.5 });
+		tags.push({ text: "Product strategy", id: "you could say I am 9/10 in that ", weight: 0 });
+		tags.push({ text: "Electronics", id: "you could say I am7/10 in that ", weight: 0 });
+		tags.push({ text: "Robotics", id: "you could say I am 7/10 in that ", weight: 1 });
+		tags.push({ text: "VR AR", id: "you could say I am 7/10 in that", weight: 1 });
+		tags.push({ text: "User centered design", id: "Listen to your users !!", weight: 1 });
+		tags.push({ text: "Lover", id: "<3", weight: 1 });
+		tags.push({ text: "Just contact me.. <br> And we'll take it from there", id: "Edenoffer7@gmail.com", weight: 1 });
+		tags.push({ text: "Documentary junkie", id: "Who doesn't love the BBC planet earth?!?", weight: 1 });
+		tags.push({ text: "Dog owner!", id: "Go to my instegram page to to see Renee the Most beautiful dog in the world", weight: 0 });
+		tags.push({ text: "Data visualization", id: "you could say I am 9/10 in that", weight: 1 });
+		tags.push({ text: "Foodie", id: "Oh yes I can cook!", weight: 1 });
+
+		window.clouder = new Clouder({ container: clouderEl, tags: tags });
+	} // InitClouder
 	
