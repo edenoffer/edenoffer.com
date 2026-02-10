@@ -333,7 +333,7 @@ function Clouder(params) {
         closest = obj;
 
         if (closest != null) {
-            closest.span.style.border = "1px solid black";
+            closest.span.style.border = "1px solid rgba(255,255,255,0.3)";
         } // if
 
     } // setClosest
@@ -463,17 +463,18 @@ function init() {
     var w = Math.max(window.innerWidth, document.body.clientWidth), h = Math.max(window.innerHeight, document.body.clientHeight);
     var clouder = document.getElementById('clouder');
 
-    clouder.style.border = "";
+    clouder.style.border = "none";
     clouder.style.width = asPixels(w * 2 / 3);
     clouder.style.height = asPixels(h * 2 / 3);
     clouder.style.position = "absolute";
     clouder.style.left = asPixels(w / 6);
     clouder.style.top = asPixels(h / 6);
-    clouder.style.border = "1px solid black";
 
     window.clouder = new Clouder({
         container: clouder,
-        tags: createTags()
+        tags: createTags(),
+        colorMax: "#ffffff",
+        colorMin: "#666666"
     });
 } // init
 

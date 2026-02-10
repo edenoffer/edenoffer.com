@@ -2140,7 +2140,7 @@ Function Clouder
 			closest = obj;
 			
 			if (closest != null) {
-				closest.span.style.border = "1px solid black";
+				closest.span.style.border = "1px solid rgba(255,255,255,0.3)";
 			} // if
 			
 		} // setClosest
@@ -2271,13 +2271,12 @@ Function Clouder
 		var w = Math.max(window.innerWidth, document.body.clientWidth);
 		var h = Math.max(window.innerHeight, document.body.clientHeight);
 
-		clouderEl.style.border = "";
+		clouderEl.style.border = "none";
 		clouderEl.style.width = asPixels(w * 2 / 3);
 		clouderEl.style.height = asPixels(h * 2 / 3);
 		clouderEl.style.position = "absolute";
 		clouderEl.style.left = asPixels(w / 6);
 		clouderEl.style.top = asPixels(h / 6);
-		clouderEl.style.border = "1px solid black";
 
 		var tags = [];
 		tags.push({ text: "UX<br/>UI", id: " you could say I am 9/10 in that ", weight: 0.5 });
@@ -2306,6 +2305,6 @@ Function Clouder
 		tags.push({ text: "Data visualization", id: "you could say I am 9/10 in that", weight: 1 });
 		tags.push({ text: "Foodie", id: "Oh yes I can cook!", weight: 1 });
 
-		window.clouder = new Clouder({ container: clouderEl, tags: tags });
+		window.clouder = new Clouder({ container: clouderEl, tags: tags, colorMax: "#ffffff", colorMin: "#666666" });
 	} // InitClouder
 	
